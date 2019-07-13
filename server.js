@@ -1,11 +1,12 @@
 const express = require("express");
-const app = express();
+
 const bodyparser = require("body-parser");
 
 const cors = require("cors");
-app.use(cors());
 
 const app = express();
+app.use(cors());
+
 app.use(bodyparser.json());
 app.listen(process.env.PORT || 3000, () => {
   console.log("my app is running");
