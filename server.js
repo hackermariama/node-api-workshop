@@ -27,9 +27,9 @@ app.get("/albums/:id", (req, res) => {
   res.send(album);
 });
 app.post("/albums", (req, res) => {
-  console.log(req.body);
-  albumsData.push(req.body);
-  res.send("This is the post endpoint");
+  const newAlbum = req.body;
+  albumsData.push(newAlbum);
+  res.send({ newAlbum });
 });
 app.put("/albums/:id", (req, res) => {
   const index = albumsData.findIndex(album => album.albumId === req.params.id);
